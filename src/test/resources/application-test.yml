@@ -1,0 +1,27 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: none  # Liquibase will manage the schema
+    show-sql: true
+    database-platform: org.hibernate.dialect.H2Dialect
+
+  liquibase:
+    enabled: true
+    change-log: classpath:db/changelog/db.changelog-master-test.xml
+    contexts: test
+    drop-first: true  # Optional: drops existing tables before migration
+
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+logging:
+  level:
+    liquibase: INFO
+    org.hibernate.SQL: DEBUG

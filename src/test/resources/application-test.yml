@@ -6,15 +6,15 @@ spring:
     password:
   jpa:
     hibernate:
-      ddl-auto: none  # Liquibase will manage the schema
-    show-sql: true
+      ddl-auto: none
+    show-sql: false
     database-platform: org.hibernate.dialect.H2Dialect
 
   liquibase:
     enabled: true
     change-log: classpath:db/changelog/db.changelog-master-test.xml
     contexts: test
-    drop-first: true  # Optional: drops existing tables before migration
+    drop-first: true
 
   h2:
     console:
@@ -23,5 +23,7 @@ spring:
 
 logging:
   level:
+    com.bancx.loanpayment: DEBUG
+    org.springframework.web: INFO
     liquibase: INFO
     org.hibernate.SQL: DEBUG

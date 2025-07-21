@@ -105,9 +105,6 @@ This project includes Swagger UI for interactive API documentation.
     Liquibase:
     Database schema and initial data are managed with Liquibase changelogs.
 
-    Profiles:
-    Use spring.profiles.active to switch between environments, e.g., dev, test, prod.
-
     Port:
     Default port is 8080; can be changed via server.port property.
 

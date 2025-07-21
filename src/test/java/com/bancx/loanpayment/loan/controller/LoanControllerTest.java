@@ -66,8 +66,8 @@ class LoanControllerTest {
     @Test
     void createLoan_invalidRequest_returnsBadRequest() throws Exception {
         LoanRequest invalidRequest = LoanRequest.builder()
-                .loanAmount(null) // invalid
-                .term(0)          // invalid
+                .loanAmount(null)
+                .term(0)
                 .build();
 
         mockMvc.perform(post("/loans")

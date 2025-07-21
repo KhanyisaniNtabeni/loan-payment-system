@@ -1,6 +1,8 @@
+
 spring:
   application:
     name: loan-payment-service
+  server:
 
   datasource:
     url: jdbc:h2:mem:loanpaymentdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
@@ -10,8 +12,8 @@ spring:
 
   jpa:
     hibernate:
-      ddl-auto: none  # IMPORTANT: Let Liquibase handle the schema
-    show-sql: true
+      ddl-auto: none
+    show-sql: false
     database-platform: org.hibernate.dialect.H2Dialect
     open-in-view: false
 
@@ -23,15 +25,18 @@ spring:
   liquibase:
     enabled: true
     change-log: classpath:db/changelog/db.changelog-master.xml
-    contexts: dev  # Optional: tag changesets with context="dev"
-    default-schema: PUBLIC  # H2 uses PUBLIC schema by default
-    drop-first: false  # set to true to drop tables on restart
+    contexts: dev
+    default-schema: PUBLIC
+    drop-first: false
 
 server:
   port: 8080
 
 logging:
   level:
+    root: INFO
+    com.bancx.loanpayment: DEBUG
+    org.springframework.web: INFO
     liquibase: INFO
     org.hibernate.SQL: DEBUG
     org.hibernate.type.descriptor.sql: TRACE

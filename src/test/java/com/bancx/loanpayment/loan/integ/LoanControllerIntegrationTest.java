@@ -41,7 +41,6 @@ class LoanControllerIntegrationTest {
                 .term(18)
                 .build();
 
-        // Create loan
         String jsonResponse = mockMvc.perform(post("/loans")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(request)))
@@ -51,10 +50,8 @@ class LoanControllerIntegrationTest {
                 .andExpect(jsonPath("$.term").value(18))
                 .andReturn().getResponse().getContentAsString();
 
-        // Extract loanId
         Long loanId = objectMapper.readTree(jsonResponse).get("loanId").asLong();
 
-        // Retrieve loan
         mockMvc.perform(get("/loans/" + loanId))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.loanId").value(loanId))

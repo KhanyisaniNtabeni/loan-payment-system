@@ -3,7 +3,7 @@ package com.bancx.loanpayment.loan.service.impl;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
-import com.bancx.exception.LoanNotFoundException;
+import com.bancx.loanpayment.exception.LoanNotFoundException;
 import com.bancx.loanpayment.loan.entity.Loan;
 import com.bancx.loanpayment.loan.repoaitory.LoanRepository;
 import com.bancx.loanpayment.loan.rest.LoanRequest;

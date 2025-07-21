@@ -1,7 +1,7 @@
 package com.bancx.loanpayment.loan.controller;
 
-import com.bancx.exception.GlobalExceptionHandler;
-import com.bancx.exception.LoanNotFoundException;
+import com.bancx.loanpayment.exception.GlobalExceptionHandler;
+import com.bancx.loanpayment.exception.LoanNotFoundException;
 import com.bancx.loanpayment.loan.entity.Loan;
 import com.bancx.loanpayment.loan.rest.LoanRequest;
 import com.bancx.loanpayment.loan.service.LoanService;

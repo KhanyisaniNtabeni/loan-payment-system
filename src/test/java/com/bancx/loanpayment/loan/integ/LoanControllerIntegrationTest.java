@@ -1,6 +1,6 @@
 package com.bancx.loanpayment.loan.integ;
 
-import com.bancx.exception.GlobalExceptionHandler;
+import com.bancx.loanpayment.exception.GlobalExceptionHandler;
 import com.bancx.loanpayment.loan.rest.LoanRequest;
 import com.fasterxml.jackson.databind.ObjectMapper;
 

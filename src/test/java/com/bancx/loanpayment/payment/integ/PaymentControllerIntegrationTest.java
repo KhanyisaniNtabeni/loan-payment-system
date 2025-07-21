@@ -1,6 +1,6 @@
 package com.bancx.loanpayment.payment.integ;
 
-import com.bancx.exception.GlobalExceptionHandler;
+import com.bancx.loanpayment.exception.GlobalExceptionHandler;
 import com.bancx.loanpayment.loan.entity.Loan;
 import com.bancx.loanpayment.loan.repoaitory.LoanRepository;
 import com.bancx.loanpayment.payment.rest.PaymentRequest;

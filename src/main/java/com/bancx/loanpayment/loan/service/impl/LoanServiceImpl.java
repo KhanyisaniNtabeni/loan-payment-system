@@ -1,6 +1,6 @@
 package com.bancx.loanpayment.loan.service.impl;
 
-import com.bancx.exception.LoanNotFoundException;
+import com.bancx.loanpayment.exception.LoanNotFoundException;
 import com.bancx.loanpayment.loan.entity.Loan;
 import com.bancx.loanpayment.loan.repoaitory.LoanRepository;
 import com.bancx.loanpayment.loan.rest.LoanRequest;

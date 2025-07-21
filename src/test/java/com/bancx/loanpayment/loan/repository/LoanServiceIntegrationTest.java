@@ -1,6 +1,6 @@
 package com.bancx.loanpayment.loan.repository;
 
-import com.bancx.exception.LoanNotFoundException;
+import com.bancx.loanpayment.exception.LoanNotFoundException;
 import com.bancx.loanpayment.loan.entity.Loan;
 import com.bancx.loanpayment.loan.repoaitory.LoanRepository;
 import com.bancx.loanpayment.loan.rest.LoanRequest;
@@ -8,7 +8,6 @@ import com.bancx.loanpayment.loan.rest.LoanRequest;
 import com.bancx.loanpayment.loan.service.impl.LoanServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.transaction.annotation.Transactional;

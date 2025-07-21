@@ -75,7 +75,13 @@ A Spring Boot application to manage loans and payments, including creating loans
 
    - request:
    ```bash
-   curl http://localhost:8080/loans/{loanId}
+   curl -X POST http://localhost:8080/payments \
+   -H "Content-Type: application/json" \
+   -d '{
+   "loanId": 1,
+   "paymentAmount": 100.00
+   }'
+
 
 **Swagger API Documentation**
 

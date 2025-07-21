@@ -3,6 +3,7 @@ package com.bancx.loanpayment.payment.controller;
 import com.bancx.loanpayment.payment.entity.Payment;
 import com.bancx.loanpayment.payment.rest.PaymentRequest;
 import com.bancx.loanpayment.payment.service.PaymentService;
+import io.swagger.v3.oas.annotations.Operation;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -34,6 +35,7 @@ public class PaymentController {
      * @return ResponseEntity containing the created Payment and HTTP status 201
      */
     @PostMapping
+    @Operation(summary = "Create a new payment")
     public ResponseEntity<Payment> makePayment(@Valid @RequestBody PaymentRequest request) {
         log.info("Received payment request: loanId={}, amount={}", request.getLoanId(), request.getPaymentAmount());
 

@@ -7,6 +7,7 @@ import com.bancx.loanpayment.payment.repository.PaymentRepository;
 import com.bancx.loanpayment.payment.rest.PaymentRequest;
 import com.bancx.loanpayment.payment.service.PaymentService;
 import com.bancx.loanpayment.util.LoanStatus;
+import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -40,6 +41,8 @@ public class PaymentServiceImpl implements PaymentService {
      * @throws IllegalArgumentException if payment exceeds remaining balance
      * @throws IllegalStateException if loan is already settled
      */
+
+    @Transactional
     public Payment processPayment(PaymentRequest request) {
         log.info("Processing payment for loanId={}, amount={}", request.getLoanId(), request.getPaymentAmount());
 

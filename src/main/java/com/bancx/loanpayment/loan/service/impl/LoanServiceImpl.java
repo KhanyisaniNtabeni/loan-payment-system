@@ -42,7 +42,6 @@ public class LoanServiceImpl implements LoanService {
      * @throws LoanNotFoundException if the loan doesn't exist.
      */
 
-    @Transactional
     public Loan getLoan(Long loanId) {
         return loanRepository.findById(loanId)
                 .orElseThrow(() -> new LoanNotFoundException("Loan ID " + loanId + " not found"));
@@ -54,6 +53,7 @@ public class LoanServiceImpl implements LoanService {
      * @param loan The loan to update.
      */
 
+    @Transactional
     public void updateLoan(Loan loan) {
         loanRepository.save(loan);
     }
